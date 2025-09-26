@@ -28,8 +28,8 @@ let ListaAlunos = [
 router.post('/alunos', (req, res, next) => {
   const { nome, cpf, email, dataNascimento } = req.body
   // validar se os dados vinheram
-  if (!nome || !cpf || !email || !dataNascimento) {
-    return res.status(400).json({ error: "nome, cpf, email e dataNascimento são obrigatorios!!!!" })
+  if (!nome || !cpf || !email || !dataNascimento || !telefone) {
+    return res.status(400).json({ error: "nome, cpf, email, dataNascimento e telefone são obrigatorios!!!!" })
   }
   // validar se o CPF já existe
   const aluno = ListaAlunos.find(aluno => aluno.cpf == cpf)
@@ -42,7 +42,8 @@ router.post('/alunos', (req, res, next) => {
     nome,
     cpf,
     email,
-    dataNascimento
+    dataNascimento,
+    telefone
   }
   // inserir novo aluno montada na lista
   ListaAlunos.push(novoAluno)
@@ -70,10 +71,10 @@ router.get('/alunos/:id', (req, res, next) => {
 // - PUT /alunos/{id}
 router.put('/alunos/:id', (req, res, next) => {
   const idRecebido = req.params.id
-  const { nome, email, dataNascimento } = req.body
+  const { nome, email, dataNascimento, telefone } = req.body
   // validar se os dados vinheram
-  if (!nome || !email || !dataNascimento) {
-    return res.status(400).json({ error: "nome, email e dataNascimento são obrigatórios!!!" })
+  if (!nome || !email || !dataNascimento || !telefone) {
+    return res.status(400).json({ error: "nome, email, dataNascimento e telefone são obrigatórios!!!" })
   }
   // validar se a pessoa com aquele ID existe na lista
   const aluno = ListaAlunos.find(aluno => aluno.id == idRecebido)
@@ -84,6 +85,7 @@ router.put('/alunos/:id', (req, res, next) => {
   aluno.nome = nome
   aluno.email = email
   aluno.dataNascimento = dataNascimento
+  aluno.telefone = telefone
   res.json({ message: "Aluno atualizado com sucesso!!!" })
 })
 
