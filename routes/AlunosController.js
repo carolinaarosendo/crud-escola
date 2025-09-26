@@ -23,7 +23,7 @@ let ListaAlunos = [
   }
 ]
 
-// Criar
+// Criar CRUD
 // - POST /alunos
 router.post('/alunos', (req, res, next) => {
   const { nome, cpf, email, dataNascimento } = req.body
