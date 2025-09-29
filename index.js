@@ -15,12 +15,15 @@ app.use((req, res, next) => {
   console.log("ROTA: ", req.url);
   next();
 });
+
 // TODO: Membro 1 - Importar e mapear rota de alunos
 
 // TODO: Membro 2 - Importar e mapear rota de professores
 
 // TODO: Membro 3 - Importar e mapear rota de coordenadores
-// Roteadores
+
+const coordenadoresRouter = require('./routes/CoordenadorController');
+app.use('/coordenadores', coordenadoresRouter);
 
 // executa
 app.listen(3000, () => {
