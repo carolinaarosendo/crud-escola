@@ -1,9 +1,9 @@
-=======
+
 const express = require('express');
 const cors = require('cors');
 
 const app = express();
->>>>>>> 21679ef1da0d74a113221518c030e33343b0fcc9
+
 
 //Habilitar o browser para enviar requisições e receber JSON
 app.use(cors());
