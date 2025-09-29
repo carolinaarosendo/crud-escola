@@ -25,10 +25,6 @@ app.use((req, res, next) => {
 const coordenadoresRouter = require('./routes/CoordenadorController');
 app.use('/coordenadores', coordenadoresRouter);
 
-
-// Roteadores
-
-
 // executa
 app.listen(3000, () => {
 console.log('Server is running on http://localhost:3000')
