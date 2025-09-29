@@ -1,9 +1,6 @@
 const express = require('express')
-const cors = require('cors')
-
 const app = express()
-app.use(cors())
-app.use(express.json())
+
 
 // intermediários
 const cors = require('cors')
@@ -22,7 +19,8 @@ app.use((req, res, next) => {
 // TODO: Membro 1 - Importar e mapear rota de alunos
 
 // TODO: Membro 2 - Importar e mapear rota de professores
-
+const professoresRouter = require('./routes/professores');
+app.use('/professores', professoresRouter);
 // TODO: Membro 3 - Importar e mapear rota de coordenadores
 // Roteadores
 
