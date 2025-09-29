@@ -21,10 +21,15 @@ app.use((req, res, next) => {
 // TODO: Membro 2 - Importar e mapear rota de professores
 
 // TODO: Membro 3 - Importar e mapear rota de coordenadores
+
 const coordenadoresRouter = require('./routes/CoordenadorController');
 app.use('/coordenadores', coordenadoresRouter);
 
 
+// Roteadores
+
+
+// executa
 app.listen(3000, () => {
 console.log('Server is running on http://localhost:3000')
 })
