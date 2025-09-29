@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 });
 
 // TODO: Membro 1 - Importar e mapear rota de alunos
-const alunosRouter = require('./routes/AlunoController');
+const alunosRouter = require('./routes/AlunosController');
 app.use('/alunos', alunosRouter); 
 // TODO: Membro 2 - Importar e mapear rota de professores
 const professoresRouter = require('./routes/professores');
