@@ -52,13 +52,13 @@ router.post('/alunos', (req, res, next) => {
 
 // Listar Todos
 // - GET /alunos
-router.get('/alunos', (req, res, next) => {
+router.get('/', (req, res, next) => {
   res.json(ListaAlunos)
 })
 
 // Buscar um
 // - GET /alunos/{id}
-router.get('/alunos/:id', (req, res, next) => {
+router.get('/:id', (req, res, next) => {
   const idRecebido = req.params.id
   const aluno = ListaAlunos.find(a => a.id == idRecebido)
   if (!aluno) {
@@ -69,7 +69,7 @@ router.get('/alunos/:id', (req, res, next) => {
 
 // Atualizar
 // - PUT /alunos/{id}
-router.put('/alunos/:id', (req, res, next) => {
+router.put('/:id', (req, res, next) => {
   const idRecebido = req.params.id
   const { nome, email, dataNascimento, telefone } = req.body
   // validar se os dados vinheram
@@ -91,7 +91,7 @@ router.put('/alunos/:id', (req, res, next) => {
 
 // Deletar
 // - DELETE /alunos/{id}
-router.delete('/alunos/:id', (req, res, next) => {
+router.delete('/:id', (req, res, next) => {
   const idRecebido = req.params.id
   const aluno = ListaAlunos.find(aluno => aluno.id == idRecebido)
   if(!aluno) {
