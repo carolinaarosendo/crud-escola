@@ -20,7 +20,8 @@ app.use((req, res, next) => {
   next()
 })
 // TODO: Membro 1 - Importar e mapear rota de alunos
-
+const alunosRouter = require('./routes/AlunoController');
+app.use('/alunos', alunosRouter); 
 // TODO: Membro 2 - Importar e mapear rota de professores
 
 // TODO: Membro 3 - Importar e mapear rota de coordenadores
