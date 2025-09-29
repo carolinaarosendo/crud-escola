@@ -1,9 +1,20 @@
-const express = require('express')
-const cors = require('cors')
+const express = require('express');
+const cors = require('cors');
 
-const app = express()
-app.use(cors())
-app.use(express.json())
+const app = express();
+
+//Habilitar o browser para enviar requisições e receber JSON
+app.use(cors());
+app.use(express.json());
+
+//Log das requisições
+app.use((req, res, next) => {
+  console.log("-------### LOG da Requisição ###-------");
+  console.log("TIME: ", new Date().toLocaleString());
+  console.log("METODO: ", req.method);
+  console.log("ROTA: ", req.url);
+  next();
+});
 
 // TODO: Membro 1 - Importar e mapear rota de alunos
 
